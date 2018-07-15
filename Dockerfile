@@ -39,11 +39,6 @@ RUN mkdir /home/AMP/server_data \
 && ln -vs /home/AMP/.ampdata/instances/MCMA/Minecraft /home/AMP/server_data
 VOLUME ["/home/AMP/server_data"]
 
-# full filesystem
-#VOLUME /home/AMP/.ampdata/instances/MCMA
-# plugins directory
-#VOLUME /home/AMP/.ampdata/instances/MCMA/plugins
-
 ## set healthchecks
 HEALTHCHECK --interval=10s --timeout=15s --retries=3 CMD nc -vz 127.0.0.1 8080 || exit 1
 
